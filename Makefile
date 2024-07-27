@@ -1,12 +1,8 @@
-.PHONY: build-and-deploy
-build-and-deploy:
-	docker build -t portfolio .
-
 .PHONY: down
 down:
 	docker-compose down
-	# docker image rm portfolio
 
 .PHONY: run
-run: down build-and-deploy
+run: down
+	docker build -t portfolio .
 	docker-compose up --build
