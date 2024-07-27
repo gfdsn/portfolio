@@ -1,0 +1,13 @@
+@import "./global.css";
+
+.welcome_animation {
+  height: 100vh;
+
+  background-color: var(--main-bg-color);
+  color: #fff;
+  font-size: 3.5rem;
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
