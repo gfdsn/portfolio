@@ -14,6 +14,28 @@
   place-items: center;
 }
 
+.login_button {
+  display: none;
+  cursor: pointer;
+  padding: 20px 85px;
+  background-color: #799DB8;
+  border: 0;
+  color: #fff;
+  font-size: 30px;
+  border-radius: 2px;
+  transition: .3s ease;
+
+}
+
+.login_button:hover {
+  transition: .3s ease;
+
+  background-color: #fff;
+  color: #799DB8;
+}
+
+
+
 .fade_up {
   animation: fadeUp 2s forwards;
 }
@@ -41,5 +63,6 @@
   to {
     opacity: 0;
     transform: translateY(80px);
+    display: none;
   }
 }
