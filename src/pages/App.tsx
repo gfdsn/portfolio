@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styles from './styles/home.module.css';
+import styles from '../styles/welcome.module.css';
+import { LoginButton } from '../components/Buttons/LoginButton';
 
 function App() {
 
   const [welcomeAnimation, setWelcomeAnimation] = useState('fade_up');
-  const [loginAnimation, setLoginAnimation] = useState('');
+  const [enterAnimation, setEnterAnimation] = useState('');
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const animate = (fn: Function, duration: number) => {
@@ -19,12 +20,12 @@ function App() {
   useEffect(() => { 
     
     (async () => {
-      await animate(() => setWelcomeAnimation('fade_down'), 4000)
+      await animate(() => setWelcomeAnimation('fade_down'), 3500)
       await animate(() => {
         if(buttonRef.current) 
           buttonRef.current.style.display = 'block';
-          setLoginAnimation('fade_up')
-      }, 2000)
+          setEnterAnimation('fade_up')
+      }, 1500)
     })();
     
   }, []);
@@ -32,7 +33,7 @@ function App() {
   return (
     <div className={styles.welcome_animation}>
       <h2 className={styles[welcomeAnimation]}>Welcome</h2>
-      <button className={`${styles[loginAnimation]} ${styles.login_button}`} ref={buttonRef}>Login</button>
+      <LoginButton state={enterAnimation} reference={buttonRef}/>
     </div>
   ); 
 }

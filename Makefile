@@ -4,5 +4,5 @@ down:
 
 .PHONY: run
 run: down
-	# docker build -t portfolio .
+	docker build -t portfolio .
 	docker-compose up --build

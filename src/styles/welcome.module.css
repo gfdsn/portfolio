@@ -1,0 +1,72 @@
+@import "./global.css";
+
+.welcome_animation {
+  height: 100vh;
+
+  background-color: var(--main-bg-color);
+  color: #fff;
+
+  font-size: 3.5rem;
+  font-family: var(--main-font);
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
+.enter_button {
+  display: none;
+  cursor: pointer;
+  
+  border: 0;
+  border-radius: 5px;
+  padding: 20px 85px;
+
+  background-color: #799DB8;
+  color: #fff;
+  
+  font-family: var(--secondary-font);
+  font-size: var(--main-input-fontsize);
+  font-weight: 400;
+  letter-spacing: 2px;
+  
+  transition: .3s ease;
+}
+
+.enter_button:hover {
+  transition: .3s ease;
+
+  background-color: #fff;
+  color: #799DB8;
+}
+
+.fade_up {
+  animation: fadeUp 2s forwards;
+}
+
+.fade_down {
+  animation: fadeDown 1.5s forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(80px);
+    display: none;
+  }
+}
